@@ -1,37 +1,73 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import { Image } from 'astro:assets';
 ---
 
 <Layout title="Dr. G-Mishmah">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="">
-		</p>
-		<ul role="list" class="link-card-grid">
+	<main class="h-screen bg-slate-100">
+		<section id="intro" class="h-3/4 bg-gradient-to-tr from-amber-600 to-amber-300 flex flex-col text-center justify-center space-y-6 border-t-2 border-t-amber-900">
+			{/*TODO: Replace Image with Better One */}
+			<Image src="/author/author_multicolored_dreams.jpg" 
+			width={200} height={20} alt="Author Smiling" class="mx-auto" />
+
+			<h1 class="text-7xl font-bold bg-gradient-to-l bg-clip-text text-transparent from-20% via-sky-400 from-sky-400 to-70% to-amber-100">
+				Welcome to Dr. G-Mishmah
+			</h1>
+			<h2 class="text-3xl text-slate-100 font-semibold">
+				a novelist, a writer, a mathematician, a musician
+			</h2>
+		</section>
+		
+		<section id="points" class="w-full h-1/2 bg-slate-100 flex flex-row justify-evenly py-6">
+			<card class="flex flex-col px-20 space-y-4">
+				<h1 class="text-2xl font-semibold">
+					Who is <br/>G-Mishmah?
+				</h1>
+				<p>
+					G-Mishmah (Elwood G. Edwards) is...
+				</p>
+				<a href="/about" class="">
+					About Author
+				</a>  
+			</card>
+
+			<card class="flex flex-col px-20 space-y-4">
+				<h1 class="text-2xl font-semibold">
+					What are <br/>His Works?
+				</h1>
+				<p>
+					G-Mishmah writes with an intent focus on...
+				</p>
+				<a href="/works" class="">
+					View Works
+				</a>  
+			</card>
+
+			<card class="flex flex-col px-20 space-y-4">
+				<h1 class="text-2xl font-semibold">
+					Why write<br/>the Novels?
+				</h1>
+				<p>
+					G-Mishmah really loves...
+				</p>
+				<a href="/blog" class="">
+					Read Blog
+				</a>  
+			</card>
+
 			
-		</ul>
+		</section>
+
+		<section id="content" class="flex flex-row">
+			{/* Header #1 - Works
+					Edit components/Card.astro with MambaUI
+					and give attr for title= and src= */}
+			{/* Header #2 - Blog
+				Edit components/Card.astro with MambaUI
+				and give attr for title= and src= */}
+		</section>
 	</main>
 </Layout>
 
 
-
-<style is:global>
-	input, :-ms-input-placeholder, ::-webkit-input-placeholder {
-		all: unset;
-	}
-	
-</style>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
-</style>
