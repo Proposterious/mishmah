@@ -1,18 +1,24 @@
 ---
+import { Image } from "astro:assets";
 import Navigation from "./Navigation.astro";
+import Newsletter from "./Newsletter.astro";
 
 ---
 
 {/* Header Component */}
 
-<header class="w-full | bg-amber-600">
-    <div class="w-2/3 justify-start">
-        <img src="" alt="" />
+<header class="w-full flex flex-row | bg-amber-600">
+    <div id="nav-logo" class="w-1/3 max-h-full">
+        <Image src="/author/author_multicolored_dreams.jpg"
+        width={36} height={1} class="object-fill" alt="" />
     </div>
-    <nav class="w-1/3 flex flex-row self-end justify-center space-x-2.5">
+
+    <nav class="w-1/3 flex flex-row self-end justify-center my-auto space-x-2.5">
         <Navigation href="/" label="Home" />
         <Navigation href="/about" label="About" />
         <Navigation href="/works" label="Works" />
         <Navigation href="/blog" label="Blog" />
     </nav>
+    
+    <Newsletter />
 </header>

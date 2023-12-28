@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+
+---
+
+<article id="register-newsletter-container" class="h-full w-full bg-slate-900/60 fixed z-10">
+    <card id="register-newsletter-card" class="bg-white p-8 text-slate-900 w-1/2 h-3/4 absolute top-[16%] left-1/4">
+        <h1 class="text-center text-4xl font-semibold">Sign Up for Newsletter</h1>
+        <h2 class="text-center mt-2 text-lg">Receive an email whenever the author publishes a new book!</h2>
+
+        <section id="register-newsletter-content" class="flex flex-col justify-center">
+            <div id="register-newsletter-content-author" class="flex flex-row w-1/2 mx-auto border-2 border-amber-600 border-double mt-6 p-2">
+                <Image src="/author/author_multicolored_dreams.jpg" alt="Elwood G Edwards"
+                width={140} height={140} class="object-contain" />
+                
+                <div id="register-newsletter-content-author-text" class="m-auto text-center text-lg font-bold">
+                    <h3>Thank You!</h3>
+                </div>
+            </div>
+
+            <div id="register-newsletter-content-register">
+                <form id="register-newsletter" class="w-full mt-6 flex flex-col justify-center">
+                    <div id="email-zone" class="flex flex-col w-1/2 mx-auto">
+                        <label for="mishmah-email" class="font-semibold text-sm md:text-base xl:text-lg">Your Email Address: </label>
+                        <input type="email" class="w-fit indent-2 text-sm md:text-base xl:text-lg border-amber-600 border-2 focus:border-0 p-1" id="mishmah-email" size="32" placeholder="author@gmail.com" />
+                    </div>
+
+                    <div id="checklist-zone" class="mt-4 flex flex-col space-y-2 text-center">
+                       
+                        <label for="mishmah-novels" class="text-xs font-bold">
+                            <input id="mishmah-novels" type="radio" class="" />
+                            You would like to be notified once the author releases a new novel.
+                        </label>
+
+                        <label for="mishmah-blogs" class="text-xs font-bold ml-8">
+                            <input id="mishmah-blogs" type="radio" class="" />
+                            You would like to be notified once the author publishes a new blog post.
+                        </label>
+                    </div>
+
+                    <div id="mambaUI-submit" class="text-sm lg:text-base mt-4 marker:flex mx-auto justify-center space-x-4">
+                        <button type="submit" class="px-4 py-2 border rounded-md border-amber-600 dark:border-blue-400">Back
+                            <span class="sr-only sm:not-sr-only">to shop</span>
+                        </button>
+                        <button type="submit" class="px-4 py-2 border rounded-md bg-amber-600 dark:bg-blue-400 text-slate-100 dark:text-gray-900 border-amber-600 dark:border-blue-400">
+                            <span class="sr-only sm:not-sr-only">Continue to</span> Checkout
+                        </button>
+                    </div>
+                </form> 
+
+            </div>
+        </section>
+        
+    </card>
+</article>
