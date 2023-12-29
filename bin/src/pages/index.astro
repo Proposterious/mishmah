@@ -6,52 +6,51 @@ import { Image } from 'astro:assets';
 
 <Layout title="Dr. G-Mishmah">
 	<main class="h-screen bg-slate-100">
-		<section id="intro" class="h-3/4 bg-gradient-to-tr from-amber-600 to-amber-300 flex flex-col text-center justify-center space-y-6 border-t-2 border-t-amber-900">
-			{/*TODO: Replace Image with Better One */}
-			<Image src="/author/author_multicolored_dreams.jpg" 
-			width={200} height={20} alt="Author Smiling" class="mx-auto" />
-
-			<h1 class="text-7xl font-bold bg-gradient-to-l bg-clip-text text-transparent from-20% via-sky-400 from-sky-400 to-70% to-amber-100">
-				Welcome to Dr. G-Mishmah
-			</h1>
-			<h2 class="text-3xl text-slate-100 font-semibold">
-				a novelist, a writer, a mathematician, a musician
-			</h2>
+		<section id="intro" class="w-full h-3/5 bg-cover bg-no-repeat bg-[url('/imgs/landscape_sunset.jpg')] flex flex-col text-center justify-center  border-t-2 border-t-amber-900">
+			<div class="flex flex-col space-y-6 bg-black/80 py-24">
+				<h1 class="text-7xl font-bold bg-gradient-to-l bg-clip-text text-transparent from-20% via-sky-400 from-sky-400 to-70% to-amber-100">
+					Welcome to <span class="decoration-amber-900 dark:decoration-blue-500 underline">Dr. G-Mishmah</span>
+				</h1>
+				<h2 class="text-3xl text-slate-100 font-semibold">
+					a novelist, a writer, a mathematician, a magician
+				</h2>
+			</div>
 		</section>
 		
-		<section id="points" class="w-full h-1/2 bg-slate-100 flex flex-row justify-evenly py-6">
-			<card class="flex flex-col px-20 space-y-4">
-				<h1 class="text-2xl font-semibold">
+		<section id="points" class="w-full h-auto bg-slate-100 flex flex-row items-stretch justify-evenly py-12">
+			<card class="w-1/5 flex relative flex-col space-y-6">
+				<h1 class="text-3xl font-bold text-amber-600">
 					Who is <br/>G-Mishmah?
 				</h1>
-				<p>
-					G-Mishmah (Elwood G. Edwards) is...
+				<p class="text-base font-semibold pr-4 border-r-2 border-amber-600">
+					G-Mishmah (Elwood G. Edwards) is... Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur veniam hic eos tempora explicabo beatae odio commodi cum, quas eius nemo ut officia omnis? Sed.''
 				</p>
-				<a href="/about" class="">
+				<a href="/about" class="text-center px-1.5 py-2 border-2 border-slate-100 bg-amber-600 text-slate-100 transition duration-150 focus:bg-slate-100 focus:text-amber-600 hover:border-amber-600 hover:bg-slate-100 hover:text-amber-600">
 					About Author
 				</a>  
 			</card>
 
-			<card class="flex flex-col px-20 space-y-4">
-				<h1 class="text-2xl font-semibold">
+			<card class="w-1/5 flex relative flex-col space-y-6">
+				<h1 class="text-3xl font-bold text-amber-600">
 					What are <br/>His Works?
 				</h1>
-				<p>
-					G-Mishmah writes with an intent focus on...
+				<p class="text-base font-semibold pr-4 border-r-2 border-amber-600">
+					G-Mishmah writes with an intent focus on... Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum minima quaerat maiores ab nam ducimus beatae vel accusamus, dignissimos dolor.
 				</p>
-				<a href="/works" class="">
+
+				<a href="/works" class="absolute bottom-0 w-full text-center px-1.5 py-2 border-2 border-slate-100 bg-amber-600 text-slate-100 transition duration-150 focus:bg-slate-100 focus:text-amber-600 hover:border-amber-600 hover:bg-slate-100 hover:text-amber-600">
 					View Works
 				</a>  
 			</card>
 
-			<card class="flex flex-col px-20 space-y-4">
-				<h1 class="text-2xl font-semibold">
+			<card class="w-1/5 flex relative flex-col space-y-6">
+				<h1 class="text-3xl font-bold text-amber-600">
 					Why write<br/>the Novels?
 				</h1>
-				<p>
-					G-Mishmah really loves...
+				<p class="text-base font-semibold pr-4 border-r-2 border-amber-600">
+					G-Mishmah really loves... Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius doloribus consequatur eaque. Blanditiis doloremque expedita alias voluptate quia facilis.
 				</p>
-				<a href="/blog" class="">
+				<a href="/blog" class="absolute bottom-0 w-full text-center px-1.5 py-2 border-2 border-slate-100 bg-amber-600 text-slate-100 transition duration-150 focus:bg-slate-100 focus:text-amber-600 hover:border-amber-600 hover:bg-slate-100 hover:text-amber-600">
 					Read Blog
 				</a>  
 			</card>
@@ -59,7 +58,7 @@ import { Image } from 'astro:assets';
 			
 		</section>
 
-		<section id="content" class="flex flex-row">
+		<section id="content" class="flex flex-row bg-gradient-to-tr bg-opacity-20 from-amber-600 to-amber-300">
 			{/* Header #1 - Works
 					Edit components/Card.astro with MambaUI
 					and give attr for title= and src= */}

@@ -1,19 +1,5 @@
 {/* Register for Newsletter from Header */}
 
-<button id="nav-display-newsletter" class="bg-blue-500 text-slate-100 font-semibold px-3.5 | transition duration-150 focus:bg-blue-400 focus:font-bold hover:bg-blue-600 dark:hover:bg-blue-400 hover:font-bold focus:px-2.5 hover:px-2.5 | ml-auto" type="button">
+<button id="nav-display-newsletter" class="popup-newsletter | bg-blue-500 text-slate-100 font-semibold px-3.5 | transition duration-150 focus:bg-blue-400 focus:font-bold hover:bg-blue-600 dark:hover:bg-blue-400 hover:font-bold focus:px-2.5 hover:px-2.5 | ml-auto" type="button">
     REGISTER FOR NEWSLETTER
 </button>
-
-<script>
-    const displayNewsletter = document.getElementById("nav-display-newsletter") as HTMLElement
-
-    displayNewsletter.addEventListener("click", () => {
-        const newsletterStatus = document.getElementById("register-newsletter-container") as HTMLElement
-        if (newsletterStatus.classList.contains("hidden")) { // hide registration
-            newsletterStatus.classList.remove("hidden")
-        } else { // display registration
-            newsletterStatus.classList.add("hidden") 
-        }
-        console.log("newsletterStatus", newsletterStatus.style.display)
-    })
-</script>

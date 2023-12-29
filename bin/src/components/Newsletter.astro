@@ -13,16 +13,16 @@ import { Image } from "astro:assets";
                 <Image src="/author/author_multicolored_dreams.jpg" alt="Elwood G Edwards"
                 width={140} height={140} class="object-contain" />
                 
-                <div id="register-newsletter-content-author-text" class="m-auto text-center text-lg font-bold">
+                <div id="register-newsletter-content-author-text" class="m-auto text-center text-2xl font-bold">
                     <h3>Thank You!</h3>
                 </div>
             </div>
 
             <div id="register-newsletter-content-register">
-                <form id="register-newsletter" class="w-full mt-6 flex flex-col justify-center">
+                <form id="register-newsletter" class="popup-newsletter w-full mt-6 flex flex-col justify-center">
                     <div id="email-zone" class="flex flex-col w-1/2 mx-auto">
-                        <label for="mishmah-email" class="font-semibold text-sm md:text-base xl:text-lg">Your Email Address: </label>
-                        <input type="email" class="w-fit indent-2 text-sm md:text-base xl:text-lg dark:border-blue-400 border-amber-600 border-2 focus:border-inherit p-0.5" id="mishmah-email" size="32" placeholder="author@gmail.com" />
+                        <label for="mishmah-email" class="font-semibold text-sm md:text-lg xl:text-xl">Your Email Address: </label>
+                        <input type="email" class="w-fit indent-2 placeholder:text-sm placeholder:md:text-base placeholder:xl:text-lg text-sm md:text-base xl:text-lg dark:border-blue-400 border-amber-600 border-2 focus:border-inherit p-0.5" id="mishmah-email" size="32" placeholder="email@address.com" />
                     </div>
 
                     <div id="checklist-zone" class="mt-4 flex flex-col space-y-2 text-center">
@@ -53,3 +53,19 @@ import { Image } from "astro:assets";
         
     </card>
 </article>
+
+<script>
+    const newsletterButtons = Array.from(document.getElementsByClassName("popup-newsletter")) as Array<HTMLElement>
+
+    newsletterButtons.forEach((button: HTMLElement) => { 
+        button.addEventListener("click", () => {
+            const newsletterStatus = document.getElementById("register-newsletter-container") as HTMLElement
+            if (newsletterStatus.classList.contains("hidden")) { // hide registration
+                newsletterStatus.classList.remove("hidden")
+            } else { // display registration
+                newsletterStatus.classList.add("hidden") 
+            }
+            console.log("newsletterStatus", newsletterStatus.style.display)
+        })
+    })
+</script>
