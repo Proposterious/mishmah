@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.3.4",
     "@astrojs/tailwind": "^5.0.4",
+    "@iconify-json/ic": "^1.1.17",
     "@iconify-json/mdi": "^1.1.63",
     "astro": "^4.0.7",
     "astro-icon": "^1.0.1",
