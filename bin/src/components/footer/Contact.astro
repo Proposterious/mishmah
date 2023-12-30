@@ -2,11 +2,14 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
-	svg?: string;
+	icon?: string;
 	alt: string;
 }
 
-const { svg, alt } = Astro.props;
+const { icon = "logo", alt } = Astro.props;
 ---
 
-<span class="icon-[mdi-light--home]"></span>
+<div class="flex flex-row space-x-2 rounded-full p-4">
+    <Icon name={icon} class="w-6 h-6" />
+    {alt}
+</div>

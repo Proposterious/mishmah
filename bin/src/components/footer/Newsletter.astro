@@ -1,8 +1,12 @@
 ---
 interface Props {
 	label: string;
-	href: string;
+	href?: string;
 }
 
-const { href, label } = Astro.props;
+const { href = "null", label } = Astro.props;
 ---
+
+<div class="block">
+	{href} | {label}
+</div>

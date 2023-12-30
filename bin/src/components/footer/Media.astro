@@ -1,17 +1,17 @@
 ---
-import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 interface Props {
-    alt?: string
-    img?: string
+    alt: string
+    icon?: string
     href?: string
 }
 
-const { alt, img, href } = Astro.props;
+const { alt, icon = "logo", href } = Astro.props;
 ---
 
-<a class="block" href={href}>
-    <Image src={img}
-    width={60} height={60}
-    alt={alt} />
-</a>
+<div class="flex flex-col justify-center">
+    <Icon class=""
+    name={icon} href={href} />
+    {alt}
+</div>

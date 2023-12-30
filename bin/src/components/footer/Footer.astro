@@ -1,20 +1,25 @@
 ---
 import Newsletter from "./Newsletter.astro";
+import Contact from "./Contact.astro";
+import Media from "./Media.astro";
 
 ---
 
 {/* Header Component */}
 
-<footer class="w-full h-1/4 flex flex-row">
-    <section id="footer-newsletter">
-        <Newsletter />
+<footer id="footer" class="w-full flex justify-evenly bg-slate-300">
+    <section class="flex flex-col" id="footer-newsletter">
+        <Newsletter label="whatever" />
+        <Newsletter label="whatever2" />
     </section>
 
-    <section id="footer-contact">
-        <Contact />
+    <section class="flex flex-col" id="footer-contact">
+        <Contact alt="whatever" />
+        <Contact alt="whatever2" />
     </section>
 
-    <section id="footer-media">
-        <Media />
+    <section class="flex flex-col" id="footer-media">
+        <Media alt="whatever" />
+        <Media alt="whatever2" />
     </section>
 </footer>
