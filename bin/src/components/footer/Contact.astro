@@ -2,14 +2,15 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
-	icon?: string;
 	alt: string;
+    icon?: string;
+    href?: string;
 }
 
-const { icon = "logo", alt } = Astro.props;
+const { icon = "logo", alt, href } = Astro.props;
 ---
 
-<div class="flex flex-row space-x-2 rounded-full p-4">
-    <Icon name={icon} class="w-6 h-6" />
-    {alt}
-</div>
+<span class="w-full flex flex-row space-x-2 rounded-full">
+    <Icon href={href} name={icon} class="w-6 h-6 my-auto" />
+    <a href={href} class="no-underline">{alt}</a>
+</span>

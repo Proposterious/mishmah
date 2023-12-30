@@ -7,19 +7,71 @@ import Media from "./Media.astro";
 
 {/* Header Component */}
 
-<footer id="footer" class="w-full flex justify-evenly bg-slate-300">
-    <section class="flex flex-col" id="footer-newsletter">
-        <Newsletter label="whatever" />
-        <Newsletter label="whatever2" />
+<footer id="footer" class="w-full py-6 px-24 flex justify-between bg-slate-800 text-slate-100">
+    <section class="mx-auto flex flex-col w-1/4" id="footer-newsletter">
+        <h1 class="text-lg uppercase mb-2">
+            Sign Up to Receive Updates
+        </h1>
+        <div id="footer-register-newsletter-container" class="mx-auto">
+            <form id="footer-register-newsletter" class="font-light w-full flex flex-col space-y-2 justify-center">
+                <div id="footer-firstName-zone" class="flex flex-col-reverse">
+                    <input type="text" class="w-fit bg-inherit indent-2 placeholder:text-sm placeholder:md:text-base placeholder:xl:text-md text-sm md:text-base xl:text-md border-b-2 border-b-slate-200 focus:border-inherit p-0.5 | peer" id="mishmah-firstName" placeholder="First Name" size="30" />
+                    <label for="mishmah-firstName" class="mb-1 indent-3 text-sm md:text-md xl:text-md invisible peer-focus:visible peer-focus:text-slate-400 peer-valid:text-slate-600">Your First Name</label>
+                </div>
+
+                <div id="footer-lastName-zone" class="flex flex-col-reverse">
+                    
+                    <input type="text" class="w-fit bg-inherit indent-2 placeholder:text-sm placeholder:md:text-base placeholder:xl:text-md text-sm md:text-base xl:text-md border-b-2 border-b-slate-200 focus:border-inherit p-0.5 | peer" id="mishmah-lastName" size="30" placeholder="Last Name" />
+                    <label for="mishmah-lastName" class="mb-1 indent-3 text-sm md:text-md xl:text-md invisible peer-focus:visible peer-focus:text-slate-400 peer-valid:text-slate-600">Your Last Name</label>
+                </div>
+
+                <div id="footer-email-zone" class="flex flex-col-reverse">
+                    
+                    <input type="email" class="w-fit bg-inherit indent-2 placeholder:text-sm placeholder:md:text-base placeholder:xl:text-md text-sm md:text-base xl:text-md border-b-2 border-b-slate-200 focus:border-inherit p-0.5 | peer" id="mishmah-email" size="30" placeholder="email@address.com" />
+                    <label for="mishmah-email" class="mb-1 indent-3 text-sm md:text-md xl:text-md invisible peer-focus:visible peer-focus:text-slate-400 peer-valid:text-slate-600">Your Email</label>
+                </div>
+
+                <div id="footer-checklist-zone" class="w-3/4 flex flex-col py-2 space-y-2">
+                   
+                    <label for="mishmah-novels" class="text-xs">
+                        <input id="mishmah-novels" type="checkbox" class="" />
+                        I would like to be notified once the author releases a new novel.
+                    </label>
+
+                    <label for="mishmah-blogs" class="text-xs">
+                        <input id="mishmah-blogs" type="checkbox" class="" />
+                        I would like to be notified once the author publishes a new blog post.
+                    </label>
+                </div>
+
+                <div id="footer-mambaUI-submit" class="w-full text-sm lg:text-base mt-4 block">
+                    <button type="submit" class="w-4/5 py-2 uppercase rounded-md bg-slate-700 dark:bg-blue-400 text-slate-100 dark:text-gray-900 transition-all duration-300 hover:font-semibold">
+                        Register
+                    </button>
+                </div>
+            </form> 
+
+        </div>
     </section>
 
-    <section class="flex flex-col" id="footer-contact">
-        <Contact alt="whatever" />
-        <Contact alt="whatever2" />
+    <section class="mx-auto flex flex-col w-1/4" id="footer-contact">
+        <h1 class="text-lg uppercase mb-2">
+            Contact the Author
+        </h1>
+        <div id="footer-contact-list" class="flex flex-col mt-4 ml-4 space-y-4">
+            <Contact icon="ic:mail" alt="placeholder@email.com" />
+            <Contact icon="mdi:telephone" alt="+800 000 ####" />
+        </div>
+        
     </section>
 
-    <section class="flex flex-col" id="footer-media">
-        <Media alt="whatever" />
-        <Media alt="whatever2" />
+    <section class="mx-auto flex flex-col w-1/4" id="footer-media">
+        <h1 class="text-lg uppercase mb-2">
+            Follow the Author
+        </h1>
+        <div id="footer-media-list" class="flex flex-col mt-4 space-y-4">
+            <Media alt="whatever" />
+            <Media alt="whatever2" />
+        </div>
     </section>
 </footer>
