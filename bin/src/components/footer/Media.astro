@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    alt?: string
+    img?: string
+    href?: string
+}
+
+const { alt, img, href } = Astro.props;
+---
+
+<a class="block" href={href}>
+    <Image src={img}
+    width={60} height={60}
+    alt={alt} />
+</a>
