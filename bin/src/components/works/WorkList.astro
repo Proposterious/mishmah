@@ -1,0 +1,14 @@
+--- 
+import type { CollectionEntry } from "astro:content";
+import Work from "./Work.astro";
+
+type Props = {
+    works: CollectionEntry<'works'>[]
+};
+
+const { works } = Astro.props;
+---
+
+<section id="home-works-list" class="grid grid-flow-row grid-cols-3 gap-x-16 gap-y-12">
+    {works.map(work => <Work work={work} /> )}
+</section>
