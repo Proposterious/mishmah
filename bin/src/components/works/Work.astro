@@ -1,21 +1,46 @@
 ---
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { type CollectionEntry } from 'astro:content';
 
 type Props = {
-    work: CollectionEntry<'works'>;
+    work: CollectionEntry<'works'>
 };
 
 const { work } = Astro.props;
 ---
 
-<card class='bg-gradient-to-t from-slate-100 to-inherit dark:from-slate-900 dark:to-zinc-600 max-w-xs p-8 rounded-md dark:bg-gray-900 dark:text-gray-50 | group transition-all duration-300 shadow-amber-300 shadow-md hover:shadow-xl hover:p-6'>
+<card class='bg-gradient-to-t from-slate-100 to-inherit dark:from-slate-900 dark:to-zinc-600 max-w-xs flex-grow-0 h-fit p-8 rounded-md dark:bg-gray-900 dark:text-gray-50 | group transition-all duration-300 shadow-indigo-300 hover:shadow-indigo-500 shadow-md hover:shadow-xl'>
 	<a href={`/works/${work.slug}`} class="">
-		<Image src={work.data.image} alt={work.data.title} width={600} height={600 / 1.5} class="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
-		<span class="block mt-4 mb-2">
-			<span class="block text-xs font-medium uppercase dark:text-violet-400 tracki">{work.data.categories}</span>
+		<Image
+			src={work.data.image} 
+			alt={work.data.title} 
+			width={600} 
+			height={600 / 1.5} 
+			class="object-contain object-center w-full rounded-md h-72 dark:bg-gray-500" 
+			format="webp"
+		/>
+
+		<span class="text-xs font-medium uppercase dark:text-violet-400 block mt-4 mb-2">
+			<span>{work.data.categories}</span>
 			<h2 class=`text-xl font-semibold line-clamp-1 group-hover:line-clamp-2`>{work.data.title}</h2>
 		</span>
 		<p class="dark:text-gray-100 line-clamp-2 group-hover:snap-end">{work.data.excerpt}</p>
+
+		<div class="font-medium capitalize dark:text-violet-400 mt-4">
+			<ul class="group">
+				<span class="flex flex-row font-bold text-md">
+					<Icon name="mdi:triangle-down" class="my-auto h-3 w-3 text-black" />
+					<p class="indent-2">Genre</p>
+				</span>
+				{work.data.genres.map((genre) =>
+					<li class="ml-3 hidden group-hover:flex flex-row text-sm">
+						<Icon name="mdi:circle" class="h-1 w-1 my-auto" />
+						<span class="indent-2">{genre}</span>
+					</li>
+				)}
+			</ul>
+		</div>
+
 	</a>
 </card>

@@ -9,6 +9,8 @@ type Props = {
 const { works } = Astro.props;
 ---
 
-<section id="home-works-list" class="grid grid-flow-row grid-cols-3 gap-x-16 gap-y-12">
-    {works.map(work => <Work work={work} /> )}
+<section id="home-works-list" class="grid grid-flow-row grid-cols-4 py-16">
+    {
+        (works ?? []).reverse().map((work) => <Work work={work} /> )
+    }
 </section>

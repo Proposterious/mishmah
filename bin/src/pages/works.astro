@@ -1,9 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import H1 from "../components/styles/H1.astro";
+import SUB from "../components/styles/SUB.astro";
+import WorkList from "../components/works/WorkList.astro";
+import WorkLayout from "../layouts/WorkLayout.astro";
+import { getCollection } from "astro:content";
+
+const works = await getCollection("works");
+console.log(works)
 ---
 
-<Layout title="Works | Dr. G-Mishmah">
-    <main>
-        
+<WorkLayout title="Works | Dr. G-Mishmah">
+    <section class="mt-12" slot="after-header">
+        <H1 text="Works | Dr. G-Mishmah" />
+        <SUB text="View novels written by the Philosopher" />
+    </section>
+    
+    <main class="w-full ml-24">
+        <WorkList works={works} />
     </main>
-</Layout>
+</WorkLayout>
