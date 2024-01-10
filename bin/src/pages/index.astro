@@ -2,14 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Footer from '../components/footer/Footer.astro';
+
+import { getCollection, type CollectionEntry } from "astro:content";
+import WorkList from "../components/works/WorkList.astro";
+
+type Props = {
+    works: CollectionEntry<'works'>[]
+};
+
+
+const works = await getCollection("works");
+console.log(works)
 ---
 
 <Layout title="Dr. G-Mishmah">
 	<main class="h-auto bg-slate-100">
 		<section id="intro" class="w-full h-[48rem] bg-cover bg-no-repeat bg-[url('/imgs/landscape_sunset.jpg')] flex flex-col text-center justify-center  border-t-2 border-t-amber-900">
 			<div class="flex flex-col space-y-6 bg-black/60 py-32">
-				<h1 class="tracking-wide text-7xl font-bold bg-gradient-to-l bg-clip-text text-transparent from-20% via-sky-400 from-sky-400 to-70% to-amber-100">
-					Welcome to <span class="decoration-amber-900 dark:decoration-blue-500 underline">Dr. G-Mishmah</span>
+				<h1 class="tracking-wide text-7xl font-bold bg-gradient-to-l bg-clip-text text-transparent from-20% via-sky-400 from-sky-400 to-80% to-amber-100">
+					Welcome to <span class="decoration-blue-500 dark:decoration-amber-900 underline">Dr. G-Mishmah</span>
 				</h1>
 				<h2 class="text-3xl text-slate-100 font-semibold">
 					a novelist, a writer, a mathematician, a magician
@@ -62,16 +73,13 @@ import Footer from '../components/footer/Footer.astro';
 			{/* Header #1 - Works
 					Edit components/Card.astro with MambaUI
 					and give attr for title= and src= */}
-				<article id="homepage-works" class="h-1/2 flex flex-col">
+				<article id="homepage-works" class="w-full h-1/2 flex flex-col">
 					<h1 id="homepage-works-header" class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-100 mb-4">
 						Works of G-Mishmah
 					</h1>
 
-					<div class="flex flex-row space-x-4 | border-t-2 border-t-slate-100 p-4" id="homepage-works-content">
-						<Card imageSrc='/covers/multicolored_dreams.jpg' imageAlt='Multicolored Dreams'
-						type="novel" 
-						title="Dreams are remarkable lenses for introspection—and Multicolored Dreams are the best kind." 
-						body="Listen to the arts." />
+					<div class="max-w-full h-[36.5rem] overflow-hidden hover:cursor-default transition-none | border-t-2 border-t-slate-100" id="homepage-works-content">
+						<WorkList works={works} />
 					</div>
 				</article>
 			

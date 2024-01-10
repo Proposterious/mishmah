@@ -2,7 +2,7 @@
 import H1 from "../components/styles/H1.astro";
 import SUB from "../components/styles/SUB.astro";
 import WorkList from "../components/works/WorkList.astro";
-import WorkLayout from "../layouts/WorkLayout.astro";
+import WorkLayout from "../layouts/SecondaryLayout.astro";
 import { getCollection } from "astro:content";
 
 const works = await getCollection("works");
@@ -15,7 +15,7 @@ console.log(works)
         <SUB text="View novels written by the Philosopher" />
     </section>
     
-    <main class="w-full ml-24">
+    <main class="max-w-full px-12">
         <WorkList works={works} />
     </main>
 </WorkLayout>
