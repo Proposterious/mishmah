@@ -1,6 +1,6 @@
 ---
-import { ViewTransitions, fade, slide } from 'astro:transitions';
-import WorkHeader from '../components/works/header/WorkHeader.astro';
+import { ViewTransitions } from 'astro:transitions';
+import SecondaryHeader from '../components/secondary-header/SecondaryHeader.astro';
 import Newsletter from '../components/Newsletter.astro';
 import Footer from '../components/footer/Footer.astro';
 
@@ -25,8 +25,8 @@ const { title = "Dr. G-Mishmah" } = Astro.props;
 	</head>
 	<body>
         <Newsletter />
-        <header class="pt-12 pl-12" transition:animate={fade({duration: '0.2s'})}>
-            <WorkHeader />
+        <header class="pt-12 px-8 divide-y-2">
+            <SecondaryHeader />
             <slot name="after-header" />
         </header>
 		<slot />
@@ -37,6 +37,7 @@ const { title = "Dr. G-Mishmah" } = Astro.props;
 
 <style is:global>
 	:root {
+		overscroll-behavior: none;
 	}
 	html {
 		font-family: system-ui, sans-serif;
