@@ -1,7 +1,21 @@
 ---
+import H1 from "../components/styles/H1.astro";
+import SUB from "../components/styles/SUB.astro";
+import WorkList from "../components/works/WorkList.astro";
 import SecondaryLayout from "../layouts/SecondaryLayout.astro";
+import { getCollection } from "astro:content";
 
+const posts = await getCollection("posts");
+console.log(posts)
 ---
-<SecondaryLayout title="Blog | Dr. G-Mishmah">
 
+<SecondaryLayout title="Blog | Dr. G-Mishmah">
+    <section class="mt-12" slot="after-header">
+        <H1 text="Blog | Dr. G-Mishmah" />
+        <SUB text="Read posts written by the Philosopher" />
+    </section>
+    
+    <main class="max-w-full px-12">
+        insert postslist here
+    </main>
 </SecondaryLayout>

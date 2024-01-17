@@ -23,19 +23,19 @@ const { work } = Astro.props;
 const { Content } = await work.render();
 ---
 
-<SecondaryLayout title=`${work.data.title} | Dr. G-Mishmah`>
+<SecondaryLayout title="Works | Dr. G-Mishmah">
     <section class="mt-12" slot="after-header">
         <H1 text="Works | Dr. G-Mishmah" />
         <SUB text="View novels written by the Philosopher" />
     </section>
-    <section class="w-2/5 mt-24 flex flex-row mx-auto justify-center space-x-8" slot="after-header">
+    <section class="w-3/5 mt-24 flex flex-row mx-auto justify-center space-x-8" slot="after-header">
         <Image
         src={work.data.image}
         alt={work.data.title}
-        width={256}
-        height={256/2}
+        width={1024}
+        height={512}
         format="webp"
-        class="rounded-md shadow-md object-cover" />
+        class="rounded-md shadow-md object-contain" />
         <div class="flex flex-col text-left | divide-y-2">
             <H1 text={work.data.title} />
             <SUB text={work.data.excerpt} />
