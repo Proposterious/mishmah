@@ -3,9 +3,10 @@ import { Image } from "astro:assets";
 
 ---
 
-<article id="register-newsletter-container" class="hidden h-full w-full bg-slate-900/60 dark:bg-slate-600 fixed z-10">
-    <card id="register-newsletter-card" class="bg-gradient-to-tr from-amber-600 to-slate-100 dark:from-blue-900 dark:to-slate-900/60 p-8 dark:text-slate-100 text-slate-900 w-1/2 h-3/4 fixed top-[16%] left-1/4">
-        <h1 class="text-center text-4xl font-semibold">Sign Up for Newsletter</h1>
+<article id="register-newsletter-container" class="transition duration-300 hidden h-full w-full bg-slate-900/75 dark:bg-slate-600 fixed z-10">
+    <card id="register-newsletter-card" class="bg-gradient-to-tr from-amber-600 to-slate-100 dark:from-blue-900 dark:to-slate-900/60 p-12 dark:text-slate-100 text-slate-900 w-1/2 h-3/4 fixed top-[16%] left-1/4">
+        <button class="popup-newsletter absolute right-12 transition duration-200 text-2xl font-bold hover:text-orange-600">X</button>
+        <h1 class="text-center text-4xl font-semibold tracking-wide">Sign Up for Newsletter</h1>
         <h2 class="text-center mt-2 text-lg">Receive an email whenever the author publishes a new book!</h2>
 
         <section id="register-newsletter-content" class="flex flex-col justify-center">
@@ -19,7 +20,7 @@ import { Image } from "astro:assets";
             </div>
 
             <div id="register-newsletter-content-register">
-                <form id="register-newsletter" class="popup-newsletter w-full mt-6 flex flex-col justify-center">
+                <form id="register-newsletter" class="w-full mt-6 flex flex-col justify-center select-none">
                     <div id="email-zone" class="flex flex-col w-1/2 mx-auto">
                         <label for="mishmah-email" class="font-semibold text-sm md:text-lg xl:text-xl">Your Email Address: </label>
                         <input type="email" class="w-fit indent-2 placeholder:text-sm placeholder:md:text-base placeholder:xl:text-lg text-sm md:text-base xl:text-lg dark:border-blue-400 border-amber-600 border-2 focus:border-inherit p-0.5" id="mishmah-email" size="32" placeholder="email@address.com" />
@@ -28,17 +29,17 @@ import { Image } from "astro:assets";
                     <div id="checklist-zone" class="mt-4 flex flex-col space-y-2 text-center">
                        
                         <label for="mishmah-novels" class="text-xs">
-                            <input id="mishmah-novels" type="checkbox" class="" />
+                            <input id="mishmah-novels" type="checkbox" checked />
                             I would like to be notified once the author releases a new novel.
                         </label>
 
                         <label for="mishmah-blogs" class="text-xs ml-8">
-                            <input id="mishmah-blogs" type="checkbox" class="" />
+                            <input id="mishmah-blogs" type="checkbox" />
                             I would like to be notified once the author publishes a new blog post.
                         </label>
                     </div>
 
-                    <div id="mambaUI-submit" class="text-sm lg:text-base mt-4 marker:flex mx-auto justify-center space-x-4">
+                    <div id="mambaUI-submit" class="text-sm lg:text-base mt-4 marker:flex mx-auto justify-center space-x-4 popup-newsletter">
                         <button type="reset" class="px-4 py-2 border rounded-md border-amber-600 dark:border-blue-400 transition duration-150 hover:font-semibold hover:bg-slate-100">
                             Cancel
                         </button>
@@ -55,6 +56,7 @@ import { Image } from "astro:assets";
 </article>
 
 <script>
+    {/*TODO: Create onSubmit function to handle emails and /header/Newsletter.astro behavior (like disable it after submit) */}
     const newsletterButtons = Array.from(document.getElementsByClassName("popup-newsletter")) as Array<HTMLElement>
 
     newsletterButtons.forEach((button: HTMLElement) => { 

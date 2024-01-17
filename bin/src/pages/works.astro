@@ -2,14 +2,14 @@
 import H1 from "../components/styles/H1.astro";
 import SUB from "../components/styles/SUB.astro";
 import WorkList from "../components/works/WorkList.astro";
-import WorkLayout from "../layouts/SecondaryLayout.astro";
+import SecondaryLayout from "../layouts/SecondaryLayout.astro";
 import { getCollection } from "astro:content";
 
 const works = await getCollection("works");
 console.log(works)
 ---
 
-<WorkLayout title="Works | Dr. G-Mishmah">
+<SecondaryLayout title="Works | Dr. G-Mishmah">
     <section class="mt-12" slot="after-header">
         <H1 text="Works | Dr. G-Mishmah" />
         <SUB text="View novels written by the Philosopher" />
@@ -18,4 +18,4 @@ console.log(works)
     <main class="max-w-full px-12">
         <WorkList works={works} />
     </main>
-</WorkLayout>
+</SecondaryLayout>

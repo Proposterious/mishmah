@@ -1,0 +1,49 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import SecondaryLayout from "../../layouts/SecondaryLayout.astro";
+import WorkList from "../../components/works/WorkList.astro";
+import H1 from "../../components/styles/H1.astro";
+import SUB from "../../components/styles/SUB.astro";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+    const works = await getCollection("works");
+    return works.map((work) => ({
+        params: { slug: work.slug },
+        props: { work },
+    }));
+}
+
+type Props = {
+    work: CollectionEntry<'works'>,
+    works: CollectionEntry<'works'>[]
+}
+
+const { work } = Astro.props;
+const { Content } = await work.render();
+---
+
+<SecondaryLayout title=`${work.data.title} | Dr. G-Mishmah`>
+    <section class="mt-12" slot="after-header">
+        <H1 text="Works | Dr. G-Mishmah" />
+        <SUB text="View novels written by the Philosopher" />
+    </section>
+    <section class="w-2/5 mt-24 flex flex-row mx-auto justify-center space-x-8" slot="after-header">
+        <Image
+        src={work.data.image}
+        alt={work.data.title}
+        width={256}
+        height={256/2}
+        format="webp"
+        class="rounded-md shadow-md object-cover" />
+        <div class="flex flex-col text-left | divide-y-2">
+            <H1 text={work.data.title} />
+            <SUB text={work.data.excerpt} />
+        </div>
+    </section>
+    <main class="min-w-full h-fit px-12 my-12">
+        <article class="max-w-none w-3/5 h-fit mx-auto prose prose-xl">
+            <Content />
+        </article>
+    </main>
+</SecondaryLayout>
